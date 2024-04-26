@@ -1,0 +1,65 @@
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .platforms {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .platform {
+    margin-right: 20px; /* Add margin to create space between tabs */
+  }
+  
+  .platform a {
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .platform img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .platform h2 {
+    margin-top: 10px;
+  }
+  
+  .platform:hover a {
+    transform: translateY(-5px);
+  }
+  
+  .platform:hover img {
+    transform: scale(1.05);
+  }
+  
+  .home-button {
+    display: block;
+    width: 100px;
+    margin: 30px auto;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }

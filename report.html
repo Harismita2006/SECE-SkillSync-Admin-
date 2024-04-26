@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Reporting</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.29.0/dist/apexcharts.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .chart-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Data Reporting</h1>
+        <div id="chartContainer" class="chart-container">
+           
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.29.0/dist/apexcharts.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const studentData = [
+                { name: "RIYAS RAHMAN", score: 50 },
+                { name: "ATCHAYA", score: 80 },
+                { name: "HARISMITHA", score: 70 },
+                { name: "LALITH", score: 50 },
+                { name: "AKSHAYA", score: 90 }
+            ];
+
+            // Extracting student names and scores for chart
+            const studentNames = studentData.map(student => student.name);
+            const studentScores = studentData.map(student => student.score);
+
+            
+            var options = {
+                chart: {
+                    type: 'bar'
+                },
+                series: [{
+                    name: 'Scores',
+                    data: studentScores
+                }],
+                xaxis: {
+                    categories: studentNames
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chartContainer"), options);
+            chart.render();
+        });
+    </script>
+</body>
+</html>

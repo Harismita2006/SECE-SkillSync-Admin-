@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image:url(./WhatsApp\ Image\ 2024-04-25\ at\ 10.53.47\ AM.jpeg);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.platforms {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.platform {
+    width: 200px; /* Set a fixed width for each container */
+    height: 250px; /* Set a fixed height for each container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-right: 20px; /* Add margin to create space between containers */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+  }
+  
+  .platform:last-child {
+    margin-right: 0; /* Remove margin from the last container */
+  }
+
+.platform:hover {
+  transform: translateY(-10px);
+}
+
+.platform img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.platform h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.home-button {
+  display: block;
+  width: 100px;
+  margin: 50px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+.platform {
+  padding-right: 20px; /* Add padding to create space between tabs */
+}

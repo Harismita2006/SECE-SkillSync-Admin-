@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Upload</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-image:url(./WhatsApp\ Image\ 2024-04-25\ at\ 10.53.47\ AM.jpeg);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+#upload-container {
+    margin-top: 20px;
+}
+
+#file-input {
+    margin-bottom: 10px;
+}
+
+#progress-bar {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#upload-message {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #4caf50;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Resource Upload</h1>
+    <div id="upload-container">
+        <input type="file" id="file-input">
+        <button onclick="uploadFile()">Upload</button>
+        <progress id="progress-bar" value="0" max="100"></progress>
+        <div id="upload-message"></div>
+    </div>
+</div>
+
+<script>
+function uploadFile() {
+    var fileInput = document.getElementById('file-input');
+    var progressBar = document.getElementById('progress-bar');
+    var uploadMessage = document.getElementById('upload-message');
+
+    if (fileInput.files.length === 0) {
+        uploadMessage.innerText = 'Please select a file to upload.';
+        return;
+    }
+
+    var file = fileInput.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.upload.addEventListener('progress', function(event) {
+        if (event.lengthComputable) {
+            var percentComplete = (event.loaded / event.total) * 100;
+            progressBar.value = percentComplete;
+        }
+    });
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            uploadMessage.innerText = 'File uploaded successfully!';
+        } else {
+            uploadMessage.innerText = 'File uploaded successfully!';
+        }
+    };
+
+    xhr.open('POST', 'upload.php'); // Replace 'upload.php' with your server-side script for handling file uploads
+    xhr.send(formData);
+}
+</script>
+
+</body>
+</html>
